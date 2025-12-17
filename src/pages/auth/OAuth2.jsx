@@ -13,8 +13,16 @@ function OAuth2() {
     const meQuery = useMeQuery();
 
     useEffect(() => {
-        console.log(meQuery.data);
-        
+        const {isLoading, data} = meQuery;
+        if (!isLoading) {
+            if (data.status !== 200) {
+                alert("인증이 필요합니다.");
+                navigate("/auth/login");
+            } else {
+                alert("로그인 성공");
+                navigate("/");
+            }
+        }
     }, [meQuery.data]);
 
     return <></>
