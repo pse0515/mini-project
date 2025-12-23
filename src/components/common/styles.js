@@ -14,6 +14,7 @@ export const frame = css`
     border: 3px solid #747474;
     border-radius: 30px;
     padding: 30px;
+    min-width: 1000px;
     width: 1000px;
     height: 650px;
     background-color: #000000;
@@ -27,12 +28,11 @@ export const frameContainer = css`
     height: 100%;
     background-color: #f3f5f7;
     overflow: hidden;
-
 `;
 
 
 
-/////////////////////<< Loading   >>///////////////
+////////////<< Loading >>////////////
 export const loadingBox = css`
     display: flex;
     justify-content: center;
@@ -46,15 +46,17 @@ export const loadingBox = css`
     background-color: #00000066;
 `;
 
-
-
-/////////////////////<<  LeftSideBar   >>///////////////
+////////////<< LeftSideBar >>////////////
 
 export const sideBarLayout = css`
     position: relative;
     display: flex;
     width: 100%;
     height: 100%;
+
+    & > div {
+        flex-grow: 1;
+    }
 `;
 
 export const sideBarContainer = css`
@@ -70,7 +72,7 @@ export const sideBarContainer = css`
         text-align: center;
         text-shadow: 0 0 20px #00000099;
         cursor: default;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
         &:hover {
             transform: scale(105%);
         }

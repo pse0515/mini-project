@@ -1,15 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { Link, useLocation } from "react-router-dom";
-import * as s  from "./styles";
+import * as s from "./styles";
 
-import { IoHomeOutline, IoAddCircleOutline  } from "react-icons/io5";
+import { IoHomeOutline, IoAddCircleOutline } from "react-icons/io5";
 import { MdOutlineExplore } from "react-icons/md";
 import { useMeQuery } from "../../queries/usersQueries";
 import AddPostModal from "../post/AddPostModal";
 import { useRef, useState } from "react";
-
-
-
 
 function LeftSideBar({children}) {
     const location = useLocation();
@@ -33,9 +30,9 @@ function LeftSideBar({children}) {
             <ul>
                 <Link to={"/"}><li css={s.menuListItem(pathname === "/")}><div><IoHomeOutline /></div>Home</li></Link>
                 <Link to={"/search"}><li css={s.menuListItem(pathname === "/search")}><div><MdOutlineExplore /></div>Explore</li></Link>
-                <Link ><li css={s.menuListItem(false)} onClick={handleAddPostModalOpenOnClick}><div><IoAddCircleOutline /></div>Add a Post</li></Link>
+                <Link><li css={s.menuListItem(false)} onClick={handleAddPostModalOpenOnClick}><div><IoAddCircleOutline /></div>Add a Post</li></Link>
                 {
-                    isLoading || <Link to={"/" + data.data.nickname}><li css={s.menuListItem(decodeURI(pathname) === "/" + data.data.nickname)}><div><div css={s.profileImg(data.data.imgUrl)}></div></div>{data.data.nickname}</li></Link>
+                    isLoading || <Link to={"/" + data.data.nickname}><li css={s.menuListItem(decodeURI(pathname)=== "/" + data.data.nickname)}><div><div css={s.profileImg(data.data.imgUrl)}></div></div>{data.data.nickname}</li></Link>
                 }
             </ul>
             <div>
@@ -46,10 +43,10 @@ function LeftSideBar({children}) {
             {children}
         </div>
         {
-            !!layoutRef.current&&
+            !!layoutRef.current && addPostModalOpen &&
             <AddPostModal 
                 isOpen={addPostModalOpen} 
-                onRequestClose={addPostModalClose} 
+                onRequestClose={addPostModalClose}
                 layoutRef={layoutRef} />
         }
     </div>
