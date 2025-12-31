@@ -9,12 +9,12 @@ export const layout = css`
 `;
 
 export const commentItemList = css`
-box-sizing: border-box;
+    box-sizing: border-box;
     border: 1px solid #dbdbdb;
     border-width: 2px 0;
     margin-bottom: 20px;
     padding-left: 5px;
-    height: 400px;
+    height: 350px;
     overflow-y: scroll;
 `;
 
@@ -26,7 +26,6 @@ export const commentItem = (level, isRecomment) => css`
     padding: 3px;
     width: 100%;
     padding-left: calc(20px * ${level});
-    
 
     & > div:nth-of-type(1) {
         display: flex;
@@ -45,6 +44,7 @@ export const commentItem = (level, isRecomment) => css`
             color: #1781ba;
         }
     }
+
     & > div:nth-of-type(3) {
         padding-left: 5px;
         font-size: 10px;
@@ -56,7 +56,6 @@ export const commentItem = (level, isRecomment) => css`
             font-weight: 500;
             cursor: pointer;
         }
-        
     }
 `;
 

@@ -59,8 +59,8 @@ function Comment({postId}) {
                             {
                                 !comment.parentCommentId && (
                                     comment.commentId === recomment.parentCommentId
-                                ? <span onClick={() => handleRecommentOnClick(0, 0)}>답글취소</span>
-                                : <span onClick={() => handleRecommentOnClick(comment.commentId, comment.userId)}>답글달기</span>
+                                    ? <span onClick={() => handleRecommentOnClick(0, 0)}>답글취소</span>
+                                    : <span onClick={() => handleRecommentOnClick(comment.commentId, comment.userId)}>답글달기</span>
                                 )
                             }
                         </div>

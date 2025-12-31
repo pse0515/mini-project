@@ -50,7 +50,7 @@ export const feedItemContainer = css`
         gap: 5px;
         box-sizing: border-box;
         border-top: 1px solid #dbdbdb;
-        padding: 5px;
+        padding: 5px 5px 0;
 
         & > div {
             display: flex;
@@ -99,18 +99,20 @@ export const userInfo = css`
 
 export const feedImageContainer = css`
     & .slick-prev {
-        left: 25px;
+        left: 15px;
         z-index: 2;
         &::before {
             color: black;
+            font-size: 30px;
         }
     }
 
     & .slick-next {
-        right: 25px;
+        right: 15px;
         z-index: 2;
         &::before {
             color: black;
+            font-size: 30px;
         }
     }
 `;
@@ -141,9 +143,9 @@ export const commentContainer = (commentOpen) => css`
     box-sizing: border-box;
     border-radius: 8px;
     width: 260px;
-    height: 540px;
-    background-color: #ffffff;
+    height: 490px;
     box-shadow: 0 0 10px #00000066;
+    background-color: #ffffff;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
     opacity: ${commentOpen ? 1 : 0};
